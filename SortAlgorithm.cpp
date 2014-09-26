@@ -22,6 +22,13 @@ void Exchange(T &data1, T &data2);
 */
 template<class T>
 void InsertionSort(T data[], int length);
+/*
+*冒泡排序
+* data是需要排序的数组,length是数组的长度
+*/
+template<class T>
+void BubbleSort(T data[], int length);
+
 int main()
 {
     double random(double,double);
@@ -33,7 +40,7 @@ int main()
         cout<<data[i]<<" ";
     }
     cout<<endl;
-    InsertionSort(data,10);
+    BubbleSort(data,10);
     for(int i = 0; i < 10; i++)
     {
         cout<<data[i]<<" ";
@@ -98,5 +105,19 @@ void InsertionSort(T data[], int length)
         }
         data[j + 1] = key;
         
+    }
+}
+template<class T>
+void BubbleSort(T data[], int length)
+{
+    for(int i = 0; i < length - 1; i++)
+    {
+        for(int j = 0; j < length - 1 - i; j++)
+        {
+            if (data[j] > data[j + 1])
+            {
+                Exchange(data[j], data[j + 1]);
+            }
+        }
     }
 }
