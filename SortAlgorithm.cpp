@@ -16,6 +16,12 @@ int Partion(T data[], int start, int end);
 template<class T>
 void Exchange(T &data1, T &data2);
 
+/*
+插入排序
+* data是需要排序的数组,length是数组的长度
+*/
+template<class T>
+void InsertionSort(T data[], int length);
 int main()
 {
     double random(double,double);
@@ -27,11 +33,12 @@ int main()
         cout<<data[i]<<" ";
     }
     cout<<endl;
-    QuickSort(data, 0, 10);
+    InsertionSort(data,10);
     for(int i = 0; i < 10; i++)
     {
         cout<<data[i]<<" ";
     }
+    return 0;
 
 }
 
@@ -73,4 +80,23 @@ void Exchange(T &data1, T &data2)
     temp = data1;
     data1 = data2;
     data2 = temp;
+}
+
+template<class T>
+void InsertionSort(T data[], int length)
+{
+    int j = 0;
+    T key;
+    for(int i = 1; i < length; i++)
+    {
+        j = i - 1;
+        key = data[i];
+        while(j > -1 && data[j] > key)
+        {
+            data[j + 1] = data[j];
+            j--;
+        }
+        data[j + 1] = key;
+        
+    }
 }
