@@ -1,4 +1,6 @@
 #include<iostream>
+#include<string.h>
+#include<assert.h>
 using namespace std;
 /*
  * 这是2015年大数据云计算工程师百度校招的题目
@@ -6,11 +8,15 @@ using namespace std;
  * 也就是最后一个单词变成第一个单词,以此类推.
  * 以下为程序实现.
  * */
+ /*第一种方法，严格意义上说使用了new操作符*/
 char* reverse(char * word);
+/*另外一种策略，严格意义上说其调用了求解字符串长度的库函数，需要自行实现这个函数*/
+void Reverse(char *pbegin,char *pend);
+char *ReverseSentence(char *str);
 int main()
 {
         char temp[] = {"There are so many sth."};
-        cout<<reverse(temp)<<endl;
+        cout<<ReverseSentence(temp)<<endl;
         return 0;
 }
 char* reverse(char * word)
@@ -43,5 +49,42 @@ char* reverse(char * word)
             }
         temp[index] = '\0';
         return temp;
-        
+
+}
+
+void Reverse(char *pbegin,char *pend)
+{
+    if(pbegin==NULL||pend==NULL)
+        return;
+    while(pbegin<pend)
+    {
+        char tmp;
+        tmp=*pbegin;
+        *pbegin=*pend;
+        *pend=tmp;
+        ++pbegin;
+        --pend;
+    }
+}
+char *ReverseSentence(char *str)
+{
+    assert(str!=NULL);
+    Reverse(str,str+strlen(str)-1);
+    char *base=str;
+    int WordLen=0;
+    char *WordBase=str;
+    while(*str!='\0')
+    {
+        if(*str!=' ')
+            ++WordLen;
+        else
+        {
+            Reverse(WordBase,WordBase+WordLen-1);
+            WordLen=0;
+            WordBase=str+1;
+        }
+        str++;
+    }
+    Reverse(WordBase,WordBase+WordLen-1);
+    return base;
 }
