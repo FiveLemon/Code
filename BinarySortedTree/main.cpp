@@ -1,5 +1,5 @@
 #include"node.h"
-
+#include<stdio.h>
 int main()
 {
     int i;
@@ -9,6 +9,9 @@ int main()
     {
         InsertBinarySortedTree(&T,a[i]);
     }
+    IterBinarySortedTree(T);
+    DeleteBinarySortedTree(&T,a[9]);
+    printf("\n");
     IterBinarySortedTree(T);
     return 0;
 }

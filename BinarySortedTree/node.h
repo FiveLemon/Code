@@ -13,10 +13,15 @@ enum Status
 */
 bool SearchBinarySortedTree(BinarySortedTree T, int key, BinarySortedTree f, BinarySortedTree *p);
 /*
-* 
+* 向T指向的二叉排序树中插入值
 */
 bool InsertBinarySortedTree(BinarySortedTree *T, int key);
 /*
-*中序遍历
+*中序遍历二叉排序树，输出其中的元素
 */
 void IterBinarySortedTree(BinarySortedTree T);
+/*
+* 删除排序二叉树中的某一个元素所在的节点
+*/
+bool DeleteBinarySortedTree(BinarySortedTree *T, int key);
+bool Delete(BinarySortedTree* T);
