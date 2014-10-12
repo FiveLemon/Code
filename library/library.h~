@@ -32,7 +32,7 @@ void MaxSubArray(int data[], int length)；
 bool IsPrime(int data);
 int NthPrime(int no);
 /*
- *将[begin,end]指向的内容进行颠倒(原址),第一个指针版本,第二个迭代器重载
+ *将[begin,end]指向的内容进行颠倒(原址)
  */
 template<class T>
 void Reverse(T* begin, T* end);

@@ -13,6 +13,14 @@ using namespace std;
  void swap(T *a,T * b,int m);
  template<class T>
  void RotateLeft(T[], int i);
+ /*
+  *另外一种方法,效率不如上述高
+  * */
+  //求解最大公约数
+  int CommonDivisor(int a, int b);
+  template<class T>
+  void RotateLeft1(T[], int i);
+  
 int main()
 {
     char temp[] = {"abcdefgh"};
@@ -23,7 +31,7 @@ int main()
         i++;
        }
    
-   RotateLeft(temp, 3);
+   RotateLeft1(temp, 3);
    cout<<endl;
    i = 0;
    while (temp[i] != '\0')
@@ -75,3 +83,50 @@ int main()
     }
     swap(data + p - i, data +p, i);
  }
+
+  int CommonDivisor(int a, int b)
+  {
+        while(a != b)
+        {
+            if (a > b)
+            {
+                a -= b;
+            }
+            else
+            {
+                b -= a;
+            }
+        }
+        return a;
+  }
+  template<class T>
+  void RotateLeft1(T data[], int distance)
+  {
+      int n = strlen(data);
+      int j, k;
+      int no = CommonDivisor(n, distance);
+      T key;
+        for(int i = 0; i < no; i++)
+        {
+            key = data[i];
+            j = i;
+            while(true)
+            {
+                 k = j + distance;
+                 if (k >= n)
+                 {
+                    k -= n; 
+                }
+                if (k == i)
+                {
+                    break;
+                }
+                data[j] = data[k];
+                j = k;
+            }
+            data[j] = key;
+            
+        }
+        
+            
+  }

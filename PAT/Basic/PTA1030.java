@@ -1,4 +1,4 @@
-package test;
+package source.PTA;
 
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -35,26 +35,15 @@ public class PTA1030 extends ArrayList<Integer> implements Comparator<Integer>{
 	public int result()
 	{
 		this.sort(this);
-		System.out.println(this.toString());
 		int number = 0;
-		int max_number = 0;
-		int index = -1;
-		while(++index < N)
+		for (int i = 0; i < N; i++)
 		{
-			number = 0;
-			for (int i = index; i < N; i++)
+			if (this.get(i) * 1.0 / this.get(0) <= p)
 			{
-				if (this.get(i) * 1.0 / this.get(index) <= p)
-				{
-					number++;
-				}
-			}
-			if(number > max_number)
-			{
-				max_number = number;
+				number++;
 			}
 		}
-		return max_number;
+		return number;
 	}
 
 	
