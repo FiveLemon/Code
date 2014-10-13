@@ -13,7 +13,7 @@ namespace QCQ
 {
     template<class out, class in>
     out ConvertDataType(const in& a);
-    
+
     /*
      *sumdigits用于求解整型数字各位数字的和，参数为string类型的可以求解更大的数
      */
@@ -45,3 +45,4 @@ namespace QCQ
 }
 #include "convertdatatype.cpp"
 #include "reverse.cpp"
+#include "maxsubarray.cpp"
