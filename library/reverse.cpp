@@ -1,21 +1,23 @@
-#include"library.h"
-template<class T>
-void Reverse(T* begin, T* end)
+namespace QCQ
 {
-    while (begin < end)
+    template<class T>
+    void Reverse(T* begin, T* end)
     {
-        swap(*begin, * end);
-        begin++;
-        end--;
+        while (begin < end)
+        {
+            swap(*begin, * end);
+            begin++;
+            end--;
+        }
     }
-}
-template<class T>
-void Reverse(T begin, T end)
-{
-    while (begin < end)
+    template<class T>
+    void Reverse(T begin, T end)
     {
-        swap(*begin, * end);
-        begin++;
-        end--;
+        while (begin < end)
+        {
+            swap(*begin, * end);
+            begin++;
+            end--;
+        }
     }
 }
