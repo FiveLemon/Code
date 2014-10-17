@@ -42,6 +42,14 @@ namespace QCQ
     void Reverse(T* begin, T* end);
     template<class T>
     void Reverse(T begin, T end);
+    /*
+     *Add函数实现了整型数据转换成字符串之后的相加操作，不具有位数的限制。
+     */
+    string Add(string op1, string op2);
+    /*
+     *将十进制的整型data转换成adix进制，以字符串形式返回
+     */
+    string RadixConvert(int data, int radix);
 }
 #include "convertdatatype.cpp"
 #include "reverse.cpp"

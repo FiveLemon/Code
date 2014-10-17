@@ -13,6 +13,7 @@ namespace QCQ
             if (0 == data % i)
             {
                 flag = false;
+                break;
             }
         }
         return flag;
