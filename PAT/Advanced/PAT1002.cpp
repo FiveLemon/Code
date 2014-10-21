@@ -4,7 +4,6 @@
 #include<string>
 #include<map>
 using namespace std;
-
 int main()
 {
     float data[1200] = {0};
@@ -27,13 +26,10 @@ int main()
         cin>>temp;
         max_jieci = max(num, max_jieci);
         data[num]+=temp;
-
     }
-  
     int counter = 0;
     for(int i = 0; i <= max_jieci; i++)
     {
-      
         if(0 != data[i])
         {
             counter++;
@@ -44,7 +40,6 @@ int main()
     {
         if (0 != data[i])
             printf(" %d %.1f",i,data[i]);
-        
     }
     return 0;
 }
