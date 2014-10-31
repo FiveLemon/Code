@@ -1,4 +1,4 @@
-#include"library"
+#include"library.h"
 namespace QCQ
 {
     string Add(string op1, string op2)

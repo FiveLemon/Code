@@ -9,6 +9,7 @@
 /*
  *ConvertDataType函数使用sstream头文件stringstream类，实现任意数据类型之间的转换
  */
+using std::string;
 namespace QCQ
 {
     template<class out, class in>
@@ -50,7 +51,82 @@ namespace QCQ
      *将十进制的整型data转换成adix进制，以字符串形式返回
      */
     string RadixConvert(int data, int radix);
+    double Random(double start, double end);
+
+    /*
+     *排序程序
+     */
+    /*1
+     * data是需要排序的数组，start和end是需要排序的范围。[start, end)
+     */
+    template <class T>
+    void QuickSort(T data[], int start, int end);
+    template <class T>
+    int Partion(T data[], int start, int end);
+    template <class T>
+    void Exchange(T &data1, T &data2);
+    /*2
+    插入排序
+    * data是需要排序的数组,length是数组的长度
+    */
+    template<class T>
+    void InsertSort(T data[], int length);
+    /*3
+    *冒泡排序
+    * data是需要排序的数组,length是数组的长度
+    */
+    template<class T>
+    void BubbleSort(T data[], int length);
+    /*4
+    *选择排序
+    * data是需要排序的数组,length是数组的长度
+    */
+    template<class T>
+    void SelectSort(T data[], int length);
+    /*5
+    *希尔排序  not-stable
+    * data是需要排序的数组,length是数组的长度
+    */
+    template<class T>
+    void ShellSort(T data[], int length);
+    /*6
+    *堆排序  not-stable
+    * data是需要排序的数组,length是数组的长度
+    */
+    template<class T>
+    void HeapSort(T data[], int length);
+    //实现最大堆结构,其中start和end是需要维护成最大堆的范围[start, end)
+    template<class T>
+    void MaxHeap(T data[], int start, int length);
+    //维护大头堆性质函数的递归版本
+    template<class T>
+    void MaxHeapRecursive(T data[], int start, int length);
+    /*7.1
+    *归并排序之一
+    * data是需要排序的数组,length是数组的 最后一个元素下表[start,end]
+    */
+    template<class T>
+    void MergeSort(T data[], int start, int end);
+    template<class T>
+    void Merge(T data[], int start, int mid, int end);
+    /*7.2
+    *归并排序之二，有bug
+    * data是需要排序的数组,length是数组的 最后一个元素下表[start,end]
+    */
+    template<class T>
+    void MergeSort2(T temp[], T data[], int start, int end);
+    template<class T>
+    void Merge2(T temp[], T data[], int start, int mid, int end);
+    /*7.3
+    *归并排序之三
+    * data是需要排序的数组,length是数组的长度
+    */
+    template<class T>
+    void MergeSort3(T data[], int length);
+    template<class T>
+    void MergePass(T temp[], T data[], int start,int end);
 }
 #include "convertdatatype.cpp"
 #include "reverse.cpp"
 #include "maxsubarray.cpp"
+#include "sortalgorithm.cpp"
