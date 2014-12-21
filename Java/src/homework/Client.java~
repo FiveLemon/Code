@@ -1,0 +1,10 @@
+package homework;
+
+public class Client {
+    private static Word word= null;
+    private static Excel excel = null;
+	public static Office creatOffice(int productType){
+		if (1 == productType){
+            return 
+	}
+}
