@@ -1,7 +1,7 @@
 package homework;
 
 /**
- * Question 44
+ * Question 44: This  is just for demo
  * */
 public class Client {
     private static Word word = null;
